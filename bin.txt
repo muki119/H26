@@ -1,0 +1,33 @@
+var logo = document.getElementById('logo');
+var logosx = document.getElementById('6wht');
+var navbr = document.getElementsByClassName('nav');
+var menu_a = document.getElementsByClassName('menua');
+function scfadeint(){ /// text scroll trigger (may be changed on gsap)
+  var trigb = document.getElementById('trigger_box');
+  var el = document.getElementsByClassName('main_text');
+  var em = document.getElementsByClassName('lc-txt');
+  var dist = trigb.getBoundingClientRect().top; /*gets distance from element to top of window */
+  var winheight = window.innerHeight; /* finds whole distance of  window */
+  if (dist <= (winheight/1.85 )) {
+     /* if the distace  of the element is less than the half of the whole height of the windows , display the text in a fade animamtion */
+    el[0].style.animation = 'fadeup 1.4s ease forwards';
+    em[0].style.animation = 'fadeup 1.4s ease 0.2s forwards';
+    logo.style.webkitTextStroke = '1px #242526';
+    logosx.style.color = '#242526';
+    menu_a[0].style.color ='#242526';
+    menu_a[1].style.color ='#242526';
+    menu_a[2].style.color ='#242526';
+  }else if (dist <= (winheight/1.35 )){
+    navbr[0].style.minHeight = '4.5vh' ;
+
+  }else{
+    logo.style.webkitTextStroke = '1px #f5f5f5';
+    logosx.style.color = '#f5f5f5'
+    menu_a[0].style.color ='#f5f5f5';
+    menu_a[1].style.color ='#f5f5f5';
+    menu_a[2].style.color ='#f5f5f5';
+
+    navbr[0].style.minHeight = '7.5vh' ;
+  };
+
+};
